@@ -23,7 +23,7 @@ spec:
       port: {{ .Values.env.rconPort | int }}
       targetPort: rcon-port
       protocol: TCP
-    {{- elseif eq "ClusterIP" .Values.serviceType }}
+    {{- else if eq "ClusterIP" .Values.serviceType }}
     - name: game-port
       port: {{ .Values.env.gamePort | int }}
       targetPort: game-port
